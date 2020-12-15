@@ -1,0 +1,296 @@
+/*сдеать для больших экранов и для маленьких форму заполнения 
+полей больше, а то не видно*/
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+
+	background-color: #fff;	
+	background-image: url(../img/bg_02.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #000;
+	font-family: 'Roboto Slab', serif;
+	font-size: 20px;
+	font-weight: 400;
+
+	height: 100%;
+}
+a{
+	text-decoration: none;
+}
+
+.container{
+	max-width: 1440px;
+	width: 90%;
+	margin: 0 auto;
+	background-color: rgba(255,255,255, 0.3);
+	height: 100%;
+	padding: 30px 0;
+}
+/*кнопка наверх*/
+.btn__top{
+	position: fixed;
+	overflow: hidden;
+	display: none;
+	bottom: 50px;
+    right: 0;
+	z-index: 999;
+}
+.btn__top:before{
+	display: inline-block;
+	content: '';
+	width: 50px;
+	height: 60px;
+	background-image: url(../img/arrows.svg);
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+/* /кнопка наверх*/
+.container h1{
+	font-family: 'Playfair Display SC', serif;
+	font-size: 28px;
+	height: 80px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #000;
+}
+.info, .result__info{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.about__you p{
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+.gender{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+.gender__male,
+.gender__female{
+	width: 100%;
+	background-color: rgba(255,255,255,0.8); /*228,228,228,0.8*/
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	padding: 10px 10px;
+	cursor: pointer;
+}
+.gender__male{
+	margin-right: 10px;
+}
+.gender__female{
+	margin-left: 10px;
+}
+/*стилизация radio-input для выбора пола*/
+.radio input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	margin: 10px 0 0 7px;
+}
+.gender__text {
+	position: relative;
+	padding: 0 0 0 35px;
+	cursor: pointer;
+}
+.gender__text:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 22px;
+	height: 22px;
+	border: 1px solid #CDD1DA;
+	border-radius: 50%;
+	background: #FFF;
+}
+.gender__text:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #9FD468;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+	opacity: 0;
+	transition: .2s;
+}
+.radio input:checked + .gender__text:after {
+	opacity: 1;
+}
+.radio input:focus + .gender__text:before {
+	box-shadow: 0 0 0 3px rgba(255,255,0,.7);
+}
+/* /стилизация radio-input для выбора пола*/
+
+.about__info{
+	margin-top: 20px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	min-width: 100px;
+}
+.about__label{
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	-ms-align-items: center;
+	align-items: center;
+}
+.about__input{
+	position: relative;
+	width: 100%;
+	background-color: rgba(255,255,255,0.8);
+	border: none;
+	padding: 10px 10px;
+	font-family: 'Roboto Slab', serif;
+  	font-size: 20px;
+  	font-weight: 400;
+  	outline: none;
+}
+.about__label:first-child{
+	margin-right: 20px;
+}
+.about__label:last-child{
+	margin-left: 20px;
+}
+.height__input::after{
+	content: 'см';
+	margin-left: 5px;
+}
+.weight__input::after{
+	content: 'кг';
+	margin-left: 5px;
+}
+
+.workout,
+.table__bju{
+	margin-top: 20px;
+	width: 100%;
+}
+.workout p,
+.table__bju p{
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+#select,#select__bju{
+	width: 100%;
+	padding: 10px 10px;
+	font-family: 'Roboto Slab', serif;
+  	font-size: 20px;
+  	font-weight: 400;
+  	background-color: rgba(255,255,255,0.8);
+  	border: none;
+  	cursor: pointer;
+  	outline: none;
+}
+#select__bju{
+	width: 48%;
+}
+.calculate{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+#calculate{
+	padding: 10px 10px;
+	border: 1px solid #CDD1DA;
+	background: #FFF;
+	font-family: 'Roboto Slab', serif;
+  	font-size: 20px;
+  	font-weight: 400;
+  	outline: none;
+  	cursor: pointer;
+}
+#calculate:hover{
+	box-shadow: 0 0 0 3px rgba(255,255,0,.7);
+}
+.result__info {
+    display: none;
+    background-color: rgba(255,255,255,0.8);
+    margin-bottom: 50px;
+}
+.result__inner{
+	padding: 30px 40px;
+}
+.result__inner p:first-child{
+	font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.active{
+	display: block;
+}
+
+.info__calculator{
+	background-color: rgba(255,255,255,0.8);
+	margin-top: 30px;
+	width: 70%;
+	margin: 0 auto;
+	text-align: justify;
+	margin-bottom: 30px;
+}
+.info__inner{
+	padding: 50px 5%;
+}
+.info__calculator h2{
+	font-family: 'Playfair Display SC', serif;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+.info__subtitle, ul{
+	font-size: 18px;
+}
+.info__subtitle{
+	margin-bottom: 10px;
+}
+ul{
+	margin-bottom: 20px;
+}
+li{
+	margin:0 20px;
+}

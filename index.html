@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Онлайн калькулятор</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<!-- font-family: 'Roboto Slab', serif; -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;1,700;1,900&display=swap" rel="stylesheet">
+	<!-- font-family: 'Playfair Display SC', serif; -->
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="btn__top" >
+			
+		</div>
+		<h1>Калькулятор ИМТ и нормы потребления калорий</h1>
+		
+		<div class="info">
+			<div class="about__you">
+				<p>О вас:</p>
+				<div class="gender">
+					<label class="radio gender__male">
+						<input type="radio" name="gender" value="M" class="gender__input"/>
+						<div class="gender__text">Мужской</div>
+					</label>
+					<label class="radio gender__female">
+						<input type="radio" name="gender" value="F" class="gender__input"/>
+						<div class="gender__text">Женский</div>
+					</label>
+					
+				</div>
+				<div class="about__info">
+					<label class="age__input about__label">
+						<input type="text" id="age" placeholder="Возраст" class="about__input" maxlength="3">
+					</label>
+					<label class="height__input about__label">
+						<input type="text" id="height" placeholder="Рост" class="about__input" maxlength="4">
+					</label>
+					<label class="weight__input about__label">
+						<input type="text" id="weight" placeholder="Вес" class="about__input" maxlength="4">
+					</label>
+				</div>
+			</div>
+			<!-- /.about_you -->
+			<div class="workout">
+				<p>Физическая нагрузка:</p>
+				<select name="" id="select">
+					<option value="1">Минимальный уровень (без нагрузок)</option>
+					<option value="2">Низкий уровень (физ.нагрузки 1-3 раза в неделю)</option>
+					<option value="3">Средний уровень (3-5 дней в неделю)</option>
+					<option value="4">Высокий уровень (6-7 раз)</option>
+					<option value="5">Очень высокий уровень (тренировки чаще раза в день)</option>
+				</select>
+			</div>
+
+			<div class="table__bju">
+				<p>Вы хотите:</p>
+				<select name="" id="select__bju">
+					<option value="1">Похудеть</option>
+					<option value="2">Поддержать вес</option>
+					<option value="3">Набрать вес</option>
+				</select>
+			</div>
+			<!-- /.workout -->
+			<div class="calculate">
+				<a href="#result">
+					<button id="calculate">Рассчитать</button>
+				</a>
+			</div>
+			
+		</div>
+		<!-- /.info -->
+
+		<div id="result" class="result__info">
+			<div  class="result__inner">
+				<p>Результат:</p>
+				<hr>
+				<p class="imt">
+
+				</p>
+				<p class="calories">
+
+				</p>
+				<p class="calories__bju">
+				
+				</p>
+				<p class="bju">
+					
+				</p>
+			</div>
+		</div>
+		<!-- /.result -->
+
+		<div class="info__calculator">
+			<div class="info__inner">
+				<h2 class="info__title">Что такое ИМТ?</h2>
+				<p class="info__subtitle">Индекс массы тела (ИМТ) – отношение массы тела к росту, часто использующееся для диагностики ожирения и избыточного веса у взрослых. Индекс рассчитывается как отношение массы тела в килограммах к квадрату роста в метрах (кг/м2).</p>
+				<p class="info__subtitle">Автором этой формулы является бельгийский ученый Адольф Кетле. Правда, он был не физиологом, а математиком. Поэтому к его формуле у медиков есть несколько претензий:
+					<ul>
+						<li> она не учитывает соотношения мышечной и жировой массы, поэтому ИМТ не сможет адекватно отразить состояние здоровья бодибилдера, занимающегося наращиванием мышечного потенциала;</li>
+						<li> данные расчеты не подойдут пожилым людям: для 60-70-летних пенсионеров несколько излишний вес не считается опасным для здоровья, так что диапазон ИМТ для них может быть раздвинут от 22 до 26.</li>
+					</ul>
+				</p>
+				<h2 class="info__title">Почему необходимо в сутки потреблять определенное количество калорий</h2>
+				<p class="info__subtitle">
+				В условиях полного покоя человек расходует некоторое количество энергии. Этот расход обусловлен тем, что в организме непрерывно происходит затрата энергии, связанная с его жизнедеятельностью. Большое количество энергии тратят сердце, почки, мышцы, печень, да и все другие органы и ткани живого организма.
+				</p>
+				<p class="info__subtitle">
+				Основной обмен у взрослого здорового человека в среднем равен 1 ккал на 1 кг веса в течение 1 часа. У человека весом 70 кг основной обмен будет равен 70 * 24 = 1 680 ккал. Это то количество энергии, которое затрачивается для обеспечения жизнедеятельности организма.
+				</p>
+
+				<h2 class="info__title">БЖУ</h2>
+				<p class="info__subtitle">
+				БЖУ или БЖУК (белки, жиры, углеводы, калории) — это соотношение белков, жиров и углеводов в пределах вашего дневного рациона по калорийности. Он может отличаться в зависимости от ваших целей и особенностей организма (метаболизм, соотношение жировой ткани к мышечной).
+				</p>
+			</div>
+		</div>
+		<!-- /.info_calculator -->
+	</div>
+	<!-- /.container -->
+
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
